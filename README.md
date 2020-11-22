@@ -1,4 +1,4 @@
-# Robinhood_Financial_analysis
+# Robinhood_Portfolio_analysis
 
 The Connection and data extraction from robinhood is part of the robin_stocks package developer by
 Joshua M. Fernandes
