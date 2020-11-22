@@ -4,8 +4,15 @@ import pandas as pd
 from datetime import datetime
 
 
-def get_rounded_list(input_list,decimal):
-    return_list = [round(num, 3) for num in input_list]
+def get_rounded_list(input_list, decimal):
+    #handling missing inputs and not putting any calculated value to avoid confusion
+    return_list = []
+    for num in input_list:
+        if num:
+            return_list.append(round(num, decimal))
+        else:
+            return_list.append(num)
+
     return return_list
 
 
