@@ -1,5 +1,5 @@
 from Analysis.yahoo_finance import get_yahoo_tickr_data
-from robin_stocks import authentication, account
+from robin_stocks import account
 import pandas as pd
 import plotly.express as px
 
@@ -58,11 +58,3 @@ def get_tickr_data(tickr_list, interval = '2m', range = '1d'):
     return yahoo_data
 
 #def if __name__ == '__main__':
-def main():
-    authentication.login()
-    portfolio_df = get_RHportfolio_data()
-    display_portfolio_pie(portfolio_df)
-    display_portfolio_bar(portfolio_df)
-    tickr_list = ['NIO','XPEV']
-    yahoo_data = get_tickr_data(tickr_list, range = '10d')
-    display_tickr_line_chart(yahoo_data)
