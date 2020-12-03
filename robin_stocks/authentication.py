@@ -133,7 +133,7 @@ def login(username=None, password=None, expiresIn=86400, scope='internal', by_sm
                             'backup_code': None, 'refresh_token': refresh_token})
             except:
                 print(
-                    "ERROR: There was an issue loading pickle file. Authentication may be expired - logging in normally.", file=helper.get_output())
+                    "ERROR: There was an issue loading pickle file. Authentication may be expired - logging in normally.")
                 helper.set_login_state(False)
                 helper.update_session('Authorization', None)
         else:

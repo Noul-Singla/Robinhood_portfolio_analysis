@@ -8,10 +8,12 @@ Functions
     - update_session
 """
 from functools import wraps
+import sys
 
 import requests
 from robin_stocks.globals import SESSION
 
+OUTPUT=sys.stdout
 
 def set_login_state(logged_in):
     """Sets the login state"""

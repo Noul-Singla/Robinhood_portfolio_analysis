@@ -46,8 +46,8 @@ def get_watchlist_data(watchlist_name):
 
 
 
-def display_portfolio_pie(portfolio_df):
-    fig = px.pie(portfolio_df, values='percent_share', names='tickr', title='Investment Stocks Distribution',
+def display_portfolio_pie(portfolio_df,distribution_on):
+    fig = px.pie(portfolio_df, values=distribution_on, names='tickr', title='Investment Stocks Distribution',
                  hover_name='tickr',
                  hover_data=["name", "total_buy_cost"], hole=.4,
                  labels={'total_buy_cost': 'Cost ', 'name': 'Name ', 'percent_share': 'Share (%) ', 'tickr': 'Tickr '})
@@ -71,6 +71,23 @@ def display_tickr_line_chart(input_df, y_axis="close"):
     fig.update_layout(xaxis={'showticklabels': False}, hovermode='x',
                       hoverlabel_bgcolor='rgba(255, 255, 255, 255)', hoverlabel_font_color='rgba(0,0,0)',
                       hoverlabel_font_family='Calibri', hoverlabel_font_size=10)
+    fig.show()
+
+def display_tickr_bar_chart(input_df, y_axis="close"):
+    fig = px.bar(input_df, x="tickr", y=y_axis, title='Data for stocks', color='timestamp')
+    fig.update_layout({'plot_bgcolor': 'rgba(0, 0, 0, 0)', 'paper_bgcolor': 'rgba(0, 0, 0, 0)', })
+    fig['layout']['xaxis']['type'] = "category"
+    fig.update_layout(xaxis={'showticklabels': False}, hovermode='x',
+                      hoverlabel_bgcolor='rgba(255, 255, 255, 255)', hoverlabel_font_color='rgba(0,0,0)',
+                      hoverlabel_font_family='Calibri', hoverlabel_font_size=10)
+    fig.show()
+
+def display_tickr_pie_chart(portfolio_df,distribution_on):
+    fig = px.pie(portfolio_df, values=distribution_on, names='tickr', title='Investment Stocks Distribution',
+                 hover_name='tickr',
+                 hole=.4,
+                 labels={'tickr': 'Tickr '})
+    fig.update_traces(textposition='inside', textinfo='label')
     fig.show()
 
 

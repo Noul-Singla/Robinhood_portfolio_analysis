@@ -6,6 +6,7 @@ from requests import Session
 
 # Keeps track on if the user is logged in or not.
 LOGGED_IN = False
+OUTPUT = sys.stdout
 # The session object for making get and post requests.
 SESSION = Session()
 SESSION.headers = {
@@ -25,4 +26,4 @@ SESSION.headers = {
 #sys.stderr for standard error
 #open(os.devnull,"w") for dev null
 #io.StringIO() to go to a string for the client to inspect
-OUTPUT=sys.stdout
+
